@@ -101,5 +101,9 @@ const download = (drive, fileId, destPath) => {
 main(fileId, localPath).then(status=>{
   console.log(`status: ${status}`);
 }).catch(err=>{
-  console.error(err);
+  if (typeof err.errors !== 'undefined') {
+    console.error(err.errors);
+  } else {
+    console.error(err);
+  }
 })
