@@ -45,7 +45,28 @@ node drive.js
 ```
 # About Gmail
 
-Unfortunately you need Gsuite account to call Gmail API by service account.
+Unfortunately [you need Gsuite account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) to call Gmail API by service account. I would go with [NodeMailer](https://nodemailer.com/about/). Here is the [great document](https://codeburst.io/sending-an-email-using-nodemailer-gmail-7cfa0712a799) to explain how to send gmail. 
 
 # About Storage
+
+I would use firebase storage as long as the project require one bucket for following reason.
+
+- The backend of the firebase storage is Cloud storage
+- Authentification is much easier
+- Firabase support the access from the client side.
+
+See [firebase document](https://firebase.google.com/docs/storage/admin/start) to know how to get bucket object from firabase client in server side.
+
+If you dont want the access from the client side, you can simply set up the security rules to private.
+
+```
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
+```
+
 
