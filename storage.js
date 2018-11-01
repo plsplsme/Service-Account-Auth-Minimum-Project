@@ -1,3 +1,7 @@
+//
+// Here is the example of accesing Cloud Storage by google-cloud client
+// However, I would reccomend you to use firebase storage as I described in README.
+//
 'use strict';
 require('dotenv').config();
 
