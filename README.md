@@ -69,4 +69,6 @@ service firebase.storage {
 }
 ```
 
+# How about other APIs?
+Currently I only need above apis. I would add others when I need it. Though any request or suggestion is appreciated.
 
